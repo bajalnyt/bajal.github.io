@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter One - Treasure Island</title>
+<meta http-equiv="X-UA-Compatible" content=“IE=edge”>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+<header>
+    <h2><a target="_blank"> - Bajal - </a></h2>
+    <nav>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#about">About</a></li>
+           
+    </nav>
+</header>
+<section id="hero" class="hero">
+   <div class="background-image" style="background-image: url('images/road-in-fall.jpg')"></div>
+    <h1>Life of a Developer</h1>
+    <h3>
+    <span class="smallerheadline">Everyday is a new learning experience</span></h3>
+</section>
+<section id="about" class="about">
+   <img src="images/about-pic.png" alt="Bajal" title="Bajal" class="round">
+    <h3>About Me</h3>
+    <p>Hello! my name is <a href="http://nametranslate.com/searchNames.php?name=Bajal">Bajal</a>. I am from Calicut in a small state called Kerala, in India. I fell in love with coding during my teenage years when my father brought home an old dilapidated computer that his office was trying to recycle. It was running Windows 95, and it came with Michael Jackson's complete Album Thriller. The game Dangerous Dave enticed me to make some games on my own. I started fiddling around in BASIC, and like many - proceeded to make a hangman clone, and some sick tunes with QBASIC's <a href="http://www.qbasic.net/en/reference/qb11/Statement/BEEP.htm">BEEP</a> command, much to the admonishment of my mother.</p>
+    
+    <p>Time passed, I graduated from a university that happens to be in the my home district itself. (National Institute of Technology, Calicut). The college computer lab was my favorite spot to hang around. The computers there ran Solaris, and this is where I learned to use the Unix Shell. After several <i>wget</i> s of large files that ran overnight, and exchanging notes with classmates using <i>netcat</i>, I finally started doing some HTML, JavaScript and Java coding in the first year.</p>
+    <hr>
+    <h3>What I do now</h3>
+    <p>I have been a professional programmer for about 11 years now, working mainly on the backend, but some amount of frontend work as well. Coding has become the bread-winner for me and my family.</p>
+    <!--<ul class="grid">
+        <li>
+            <img src="" title="" alt="" class="round">
+            <h4>Heading</h4>
+            <p>Content</p>
+
+        </li>
+        <li>
+            <img src="" title="" alt="" class="round">
+            <h4>Heading</h4>
+            <p>Content</p>
+
+        </li>
+        
+    </ul>-->
+    <hr>
+</section>
+
+<footer>
+  <ul>
+      <li><a href="https://twitter.com/bajal" target="_blank">
+        <i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://stackoverflow.com/users/1092133/bajal" target="_blank">
+        <i class="fa fa-stack-overflow"></i></a></li>
+      <li><a href="https://github.com/bajal" target="_blank">
+        <i class="fa fa-github"></i></a></li>
+        <li><a href="https://github.com/bajal" target="_blank">
+            <i class="fa fa-linkedin"></i></a></li>
+  </ul>
+    <p>&copy;<script>document.write(new Date().getFullYear())</script> Mohiyudeen Bajal</p>
+</footer>
+
+<script type="text/javascript">
+		$(document).ready(function(){
+		$('a[href^="#"]').on('click',function (e) {e.preventDefault();
+
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+</script>
+
+</body>
+</html>
