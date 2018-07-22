@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- This code is for demonstration purposes only.  You should not hotlink to Github, Rawgit, or files from the Cytoscape.js documentation in your production apps. -->
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" />
+        <meta charset=utf-8 />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+        <title>Animated BFS</title>
+        <script src="./cytoscape.min.js "></script>
+        <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
+        <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
+  
+    </head>
+    <style>
+        body { 
+            font: 14px helvetica neue, helvetica, arial, sans-serif;
+        }
+  
+        #cy {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <body>
+        <div id="cy"></div>
+        <!-- Load application code at the end to ensure DOM is loaded -->
+        <script>
+             var cy = cytoscape({
+  container: document.getElementById('cy'),
+
+  boxSelectionEnabled: false,
+  autounselectify: true,
+
+  style: cytoscape.stylesheet()
+    .selector('node')
+      .css({
+        'content': 'data(showText)',
+        'color': 'green'
+      })
+    
+    .selector('edge')
+      .css({
+        'curve-style': 'bezier',
+        'target-arrow-shape': 'triangle',
+        'width': 4,
+        'line-color': '#ddd',
+        'target-arrow-color': '#ddd'
+	  })
+	  .selector('.SPLITTER')
+      .css({
+		'background-color': '#000',
+        'line-color': '#000',
+        'target-arrow-color': '#000',
+        'transition-property': 'background-color, line-color, target-arrow-color',
+        'transition-duration': '0.5s'
+    }).selector('.highlighted')
+      .css({
+        'background-color': '#61bffc',
+        'line-color': '#61bffc',
+        'target-arrow-color': '#61bffc',
+        'transition-property': 'background-color, line-color, target-arrow-color',
+        'transition-duration': '0.5s'
+      }).selector('.BROKEN')
+      .css(
+          {
+              'color' : 'red',
+              'line-color': 'red',
+              'background-color': 'red',
+              'target-arrow-color' : 'red'
+          }
+      ),
+
+  elements: {"nodes":[{"data":{"id":13149977,"showText":"ServiceTerminal: 1386 STONE CT"},"classes":"ServiceTerminal"},{"data":{"id":13149978,"showText":"BAN: 156400374"},"classes":"BAN"},{"data":{"id":51,"showText":"DSLAM: SBNEINRC---01CAB101A"},"classes":"DSLAM BROKEN"}],"edges":[{"data":{"id":14453925,"source":51,"target":13149977}},{"data":{"id":14453926,"source":13149977,"target":13149978}}]},
+
+  layout: {
+    name: 'breadthfirst',
+    directed: true,
+    spacingFactor: 1,
+    roots: '#thisdoesnotexist,#51',
+    padding: 10
+  },
+
+  autolock: false
+
+});
+
+var bfs = cy.elements().dfs('#51', function(){}, true);
+
+var i = 0;
+var highlightNextEle = function(){
+  if( i < bfs.path.length ){
+    bfs.path[i].addClass('BROKEN');
+    i++;
+    setTimeout(highlightNextEle, 500);
+  }
+};
+
+// // kick off first highlight
+highlightNextEle();
+
+        </script>
+    </body>
+</html>
