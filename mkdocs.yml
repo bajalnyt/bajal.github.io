@@ -1,0 +1,23 @@
+# Project information
+site_name: "MyNotes"
+site_description: "Random Notes and Tidbits"
+site_author: "Mohiyudeen Bajal"
+#site_url: ''
+
+# Repository
+repo_name: "bajal/bajal.github.io"
+repo_url: "https://github.com/bajal/bajal.github.io"
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: "en"
+  palette:
+    primary: "black"
+    accent: "light-blue"
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+  #logo: "images/nyt-logo.svg"
+  feature:
+    tabs: true
