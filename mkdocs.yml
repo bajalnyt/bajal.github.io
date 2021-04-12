@@ -29,3 +29,4 @@ nav:
   - Home: index.md
   - Tech:
       - Git Tips: git_tips.md
+      - Golang: golang.md
