@@ -30,3 +30,4 @@ nav:
   - Tech:
       - Git Tips: git_tips.md
       - Golang: golang.md
+      - Local SFTP server: sftpgo.md
