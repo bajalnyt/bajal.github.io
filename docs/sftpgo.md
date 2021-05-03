@@ -13,7 +13,7 @@ What follows below is a quick set of instructions to get you started using the `
 
 2. Launch an sftpgo container. Notice we are binding a local path on the host to the sftp server to simulate a file system.
 
-   ```bash
+   ```
    docker run --name some-sftpgo -p 127.0.0.1:8080:8080 -p 2022:2022 --mount type=bind,source=/Users/bajal/share,target=/outbox -d "drakkan/sftpgo:latest"
    ```
 
@@ -28,8 +28,8 @@ What follows below is a quick set of instructions to get you started using the `
 
 4. Now you can connect to the server using the **private** key created in step 1 as: 
 
-   ```bash
-   sftp -v -P 2022 -i ssh_host_rsa_key foo@localhos
+   ```
+   sftp -v -P 2022 -i ssh_host_rsa_key foo@localhost
    ```
 
    
