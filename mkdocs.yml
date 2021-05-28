@@ -31,3 +31,7 @@ nav:
       - Git Tips: git_tips.md
       - Golang: golang.md
       - Local SFTP server: sftpgo.md
+  - Personal:
+      - Places Visited: places_visited.md
+  - Competetive Programming:
+      - LeetCode List: leetcode_list.md
