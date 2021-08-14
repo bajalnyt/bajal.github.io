@@ -35,3 +35,5 @@ nav:
       - Places Visited: places_visited.md
   - Competetive Programming:
       - LeetCode List: leetcode_list.md
+  - AWS:
+      - SAA02: aws-saa02.md
